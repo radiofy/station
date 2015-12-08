@@ -6,33 +6,6 @@ module Station
   class Base
     attr_reader :data, :args
 
-    class Config
-      def id(value)
-        @id = value
-      end
-
-      def url(value)
-        @url = value
-      end
-
-      def read_id
-        @id
-      end
-
-      def read_url
-        @url
-      end
-    end
-
-    def self.config(&block)
-      @@config ||= Config.new
-      @@config.instance_eval(&block)
-    end
-
-    def config
-      @@config
-    end
-
     def initialize
       raise "id in parent isn't set" if config.read_id.blank?
       raise "url in parent isn't set" if config.read_url.blank?
@@ -75,10 +48,20 @@ module Station
         },
         artist: {
           name: c_artist
-        }
+        },
+        id: config.read_id
       }
     end
 
+    def self.config(&block)
+      @@config ||= Config.new
+      @@config.instance_eval(&block)
+    end
+
+    def config
+      @@config
+    end
+    
     protected
 
     #
@@ -121,6 +104,24 @@ module Station
       @_data ||= RestClient.get(config.read_url)
     rescue RestClient::Exception
       raise ExternalError.new($!)
+    end
+  end
+
+  class Config
+    def id(value)
+      @id = value
+    end
+
+    def url(value)
+      @url = value
+    end
+
+    def read_id
+      @id
+    end
+
+    def read_url
+      @url
     end
   end
 
