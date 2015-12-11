@@ -3,7 +3,19 @@ require "rest-client"
 require "active_support/all"
 
 module Station
+  @@subclasses = []
+
+  def self.stations
+    @@subclasses
+  end
+
   class Base
+    def self.inherited(base)
+      if base.to_s.match(/Unit/)
+        Station.stations << base
+      end
+    end
+
     attr_reader :data, :args
 
     def initialize
@@ -61,7 +73,7 @@ module Station
     def config
       @@config
     end
-    
+
     protected
 
     #

@@ -1,7 +1,11 @@
 require "stations/version"
 
 module Stations
-  # Your code goes here...
+  def stations
+    Station::Unit.constants.select do |klass| 
+      Class === Station::Unit.const_get(klass)
+    end
+  end
 end
 
 # stations = JSON.parse(File.read(Rails.root.join("lib/station/lists/ilikeradio.json")))

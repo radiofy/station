@@ -1,6 +1,5 @@
 require_relative "../lib/stations/antennevorarlberg"
 require "pp"
-
 RSpec::Matchers.define :be_a_valid_station do
   match do |actual|
     actual.is_a?(Hash) and
@@ -14,6 +13,8 @@ end
 
 describe Station do
   it "should work", :vcr do
-    expect(Station::Antennevorarlberg.new.perform).to be_a_valid_station
+    # pp Station::Unit.constants.select {|c| Class === Station::Unit.const_get(c)}
+    pp Station.stations
+    expect(Station::Unit::Antennevorarlberg.new.perform).to be_a_valid_station
   end
 end
