@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class Shoutcast < Base::HTML
+#   class Shoutcast < Format::HTML
 #     def process
 #       tr =  data.css("tr").select do |tr|
 #         !! tr.to_s.match(/Current Song: /)

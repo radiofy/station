@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class Radio538 < Base::HTML
+#   class Radio538 < Format::HTML
 #     def process
 #       track = data.at_css("div").try(:text)
 #       artist, song = track && track.strip.

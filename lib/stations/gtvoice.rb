@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class Gtvoice < Base::HTML
+#   class Gtvoice < Format::HTML
 #     def process
 #       track = data.at_css("marquee")
 #       artist, song = track && split(track.text)

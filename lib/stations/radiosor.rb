@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class Radiosor < Base::HTML
+#   class Radiosor < Format::HTML
 #     def process
 #       track = data.at_css("span").try(:text)
 #       artist, song = track && split(track)

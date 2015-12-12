@@ -22,8 +22,8 @@ module Station
       attr_reader :data, :args
 
       def initialize
-        raise "id in parent isn't set" if config.read_id.blank?
-        raise "url in parent isn't set" if config.read_url.blank?
+        raise "id in parent isn't set" if config.id.blank?
+        raise "url in parent isn't set" if config.url.blank?
       end
 
       def perform
@@ -64,7 +64,7 @@ module Station
           artist: {
             name: c_artist
           },
-          id: config.read_id
+          id: config.id
         }
       end
 
@@ -109,38 +109,32 @@ module Station
 
       def content
         @_content ||= process
-      # rescue
-      #   raise ExternalError.new($!)
       end
 
       def fail(klass, message)
-        raise klass, "[#{config.read_id}] #{message}"
+        raise klass, "[#{config.id}] #{message}"
       end
 
       private
 
       def data
-        @_data ||= RestClient.get(config.read_url)
+        @_data ||= RestClient.get(config.url)
       rescue RestClient::Exception
         raise ExternalError.new($!)
       end
     end
 
     class Config
-      def id(value)
-        @id = value
+      def id(value = nil)
+        value ? @id = value : @id
       end
 
-      def url(value)
-        @url = value
+      def url(value = nil)
+        value ? @url = value : @url
       end
 
-      def read_id
-        @id
-      end
-
-      def read_url
-        @url
+      def disabled(value = nil)
+        value ? @disabled = true : @disabled
       end
     end
 

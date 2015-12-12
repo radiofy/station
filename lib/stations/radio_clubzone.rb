@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class RadioClubzone < Base::HTML
+#   class RadioClubzone < Format::HTML
 #     url "http://www.radioclubzone.com/scripts/ajxshowtrack.php"
     
 #     def process

@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class WDR < Base::HTML
+#   class WDR < Format::HTML
 #     def process
 #       track = data.at_css("#searchPlaylistResult tr:nth-child(1) td")
 

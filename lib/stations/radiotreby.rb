@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class Radiotreby < Base::HTML
+#   class Radiotreby < Format::HTML
 #     def process
 #       raw = data.xpath("//td[@background='http://www.radiotreby.se/images/onair_mid.png']//marquee").text
 #       track = raw.match(/NU:\s+(.+?)\(.+\)/i).to_a[1]

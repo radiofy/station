@@ -9,6 +9,7 @@ module Station
       config do
         id key
         url "http://trackplaying.appspot.com/?brand=#{station}"
+        disabled true
       end
 
       def process

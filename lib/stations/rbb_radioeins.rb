@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class RbbRadioeins < Base::HTML
+#   class RbbRadioeins < Format::HTML
 #     def process
 #       {
 #         artist: data.at_css(".artist").try(:text),

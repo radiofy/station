@@ -1,11 +1,14 @@
-# require_relative "../classes/html"
+module Station
+  class Dansbandsdax < Format::HTML
+    config do
+      id "dansbandsdax"
+      url "http://www.dansbandsdax.se/player/current.asp"
+    end
 
-# module Station
-#   class Dansbandsdax < Base::HTML
-#     def process
-#       track = data.at_css("#Box").content
-#       artist, song = track && split(track.split("\n").last.strip)
-#       { artist: artist, song: song }
-#     end
-#   end
-# end
+    def process
+      track = data.at_css("#Box").content
+      artist, song = track && split(track.split("\n").last.strip)
+      { artist: artist, song: song }
+    end
+  end
+end

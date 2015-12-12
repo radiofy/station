@@ -1,7 +1,7 @@
 # require_relative "../classes/html"
 
 # module Station
-#   class RadioDcm < Base::HTML
+#   class RadioDcm < Format::HTML
 #     def process
 #       track = data.at_css("body").content.
 #         match(/ONAIR: (.+?)BEFORE:/).to_a.last
