@@ -1,10 +1,11 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <sr>
   <copyright>Copyright Sveriges Radio 2015. All rights reserved.</copyright>
   <pagination>
     <page>1</page>
     <size>1000</size>
-    <totalhits>51</totalhits>
+    <totalhits>56</totalhits>
     <totalpages>1</totalpages>
   </pagination>
   <channels>
@@ -12,6 +13,7 @@
       <image>http://sverigesradio.se/sida/images/132/2186745_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/132/2186745_512_512.jpg</imagetemplate>
       <color>31a1bd</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/p1</siteurl>
       <liveaudio id="132">
         <url>http://sverigesradio.se/topsy/direkt/132.mp3</url>
@@ -105,6 +107,7 @@
       <image>http://sverigesradio.se/sida/images/212/2186768_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/212/2186768_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/goteborg/</siteurl>
       <liveaudio id="212">
         <url>http://sverigesradio.se/topsy/direkt/212.mp3</url>
@@ -118,6 +121,7 @@
       <image>http://sverigesradio.se/sida/images/220/2186771_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/220/2186771_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/halland/</siteurl>
       <liveaudio id="220">
         <url>http://sverigesradio.se/topsy/direkt/220.mp3</url>
@@ -131,6 +135,7 @@
       <image>http://sverigesradio.se/sida/images/200/2186775_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/200/2186775_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/jamtland/</siteurl>
       <liveaudio id="200">
         <url>http://sverigesradio.se/topsy/direkt/200.mp3</url>
@@ -144,6 +149,7 @@
       <image>http://sverigesradio.se/sida/images/203/2186777_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/203/2186777_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/jonkoping/</siteurl>
       <liveaudio id="203">
         <url>http://sverigesradio.se/topsy/direkt/203.mp3</url>
@@ -157,6 +163,7 @@
       <image>http://sverigesradio.se/sida/images/201/2186779_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/201/2186779_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/kalmar/</siteurl>
       <liveaudio id="201">
         <url>http://sverigesradio.se/topsy/direkt/201.mp3</url>
@@ -170,6 +177,7 @@
       <image>http://sverigesradio.se/sida/images/211/2186781_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/211/2186781_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/kristianstad/</siteurl>
       <liveaudio id="211">
         <url>http://sverigesradio.se/topsy/direkt/211.mp3</url>
@@ -183,6 +191,7 @@
       <image>http://sverigesradio.se/sida/images/214/2186783_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/214/2186783_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/kronoberg/</siteurl>
       <liveaudio id="214">
         <url>http://sverigesradio.se/topsy/direkt/214.mp3</url>
@@ -193,8 +202,8 @@
       <xmltvid>p4kron.sr.se</xmltvid>
     </channel>
     <channel id="207" name="P4 Malmöhus">
-      <image />
-      <imagetemplate>http://sverigesradio.se/</imagetemplate>
+      <image>http://sverigesradio.se/sida/images/207/2186785_512_512.jpg?preset=api-default-square</image>
+      <imagetemplate>http://sverigesradio.se/sida/images/207/2186785_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
       <tagline />
       <siteurl>http://sverigesradio.se/malmo/</siteurl>
@@ -207,8 +216,8 @@
       <xmltvid>p4malm.sr.se</xmltvid>
     </channel>
     <channel id="209" name="P4 Norrbotten">
-      <image>http://sverigesradio.se/sida/images/209/2633733_512_512.jpg?preset=api-default-square</image>
-      <imagetemplate>http://sverigesradio.se/sida/images/209/2633733_512_512.jpg</imagetemplate>
+      <image>http://sverigesradio.se/sida/images/209/2186788_512_512.jpg?preset=api-default-square</image>
+      <imagetemplate>http://sverigesradio.se/sida/images/209/2186788_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
       <tagline />
       <siteurl>http://sverigesradio.se/norrbotten/</siteurl>
@@ -266,6 +275,7 @@
       <image>http://sverigesradio.se/sida/images/202/2186811_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/202/2186811_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/sormland/</siteurl>
       <liveaudio id="202">
         <url>http://sverigesradio.se/topsy/direkt/202.mp3</url>
@@ -279,6 +289,7 @@
       <image>http://sverigesradio.se/sida/images/218/2186816_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/218/2186816_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/uppland/</siteurl>
       <liveaudio id="218">
         <url>http://sverigesradio.se/topsy/direkt/218.mp3</url>
@@ -306,6 +317,7 @@
       <image>http://sverigesradio.se/sida/images/219/2186824_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/219/2186824_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/vast/</siteurl>
       <liveaudio id="219">
         <url>http://sverigesradio.se/topsy/direkt/219.mp3</url>
@@ -319,6 +331,7 @@
       <image>http://sverigesradio.se/sida/images/215/2186826_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/215/2186826_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/vasterbotten/</siteurl>
       <liveaudio id="215">
         <url>http://sverigesradio.se/topsy/direkt/215.mp3</url>
@@ -332,6 +345,7 @@
       <image>http://sverigesradio.se/sida/images/216/2186830_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/216/2186830_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/vasternorrland/</siteurl>
       <liveaudio id="216">
         <url>http://sverigesradio.se/topsy/direkt/216.mp3</url>
@@ -345,6 +359,7 @@
       <image>http://sverigesradio.se/sida/images/217/2186832_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/217/2186832_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/vastmanland/</siteurl>
       <liveaudio id="217">
         <url>http://sverigesradio.se/topsy/direkt/217.mp3</url>
@@ -358,6 +373,7 @@
       <image>http://sverigesradio.se/sida/images/221/2186836_512_512.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/221/2186836_512_512.jpg</imagetemplate>
       <color>c31eaa</color>
+      <tagline />
       <siteurl>http://sverigesradio.se/orebro/</siteurl>
       <liveaudio id="221">
         <url>http://sverigesradio.se/topsy/direkt/221.mp3</url>
@@ -434,19 +450,19 @@
       </liveaudio>
       <channeltype>Fler kanaler</channeltype>
     </channel>
-    <channel id="2842" name="Metropol">
-      <image>http://sverigesradio.se/sida/images/2842/2446036_512_512.jpg?preset=api-default-square</image>
-      <imagetemplate>http://sverigesradio.se/sida/images/2842/2446036_512_512.jpg</imagetemplate>
+    <channel id="2842" name="P5 STHLM">
+      <image>http://sverigesradio.se/sida/images/2842/3513727_1152_1152.jpg?preset=api-default-square</image>
+      <imagetemplate>http://sverigesradio.se/sida/images/2842/3513727_1152_1152.jpg</imagetemplate>
       <color>00c88c</color>
       <tagline />
       <siteurl>http://sverigesradio.se/sida/default.aspx?programid=2842</siteurl>
       <liveaudio id="2842">
         <url>http://sverigesradio.se/topsy/direkt/2842.mp3</url>
-        <statkey>/app/direkt/metropol[k(2842)]</statkey>
+        <statkey>/app/direkt/p5 sthlm[k(2842)]</statkey>
       </liveaudio>
       <scheduleurl>http://sverigesradio.se/api/v2/scheduledepisodes?channelid=2842</scheduleurl>
-      <channeltype>Fler kanaler</channeltype>
-      <xmltvid>srmetropol.sr.se</xmltvid>
+      <channeltype>Rikskanal</channeltype>
+      <xmltvid>p5sthlm.sr.se</xmltvid>
     </channel>
     <channel id="2562" name="P2">
       <image>http://sverigesradio.se/sida/images/2562/3082333_512_512.jpg?preset=api-default-square</image>
@@ -478,7 +494,6 @@
       <image>http://sverigesradio.se/sida/images/2755/3462380_1152_1152.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/2755/3462380_1152_1152.jpg</imagetemplate>
       <color>cd0000</color>
-      <tagline />
       <siteurl>http://sverigesradio.se/sida/default.aspx?programid=2755</siteurl>
       <liveaudio id="2755">
         <url>http://sverigesradio.se/topsy/direkt/2755.mp3</url>
@@ -513,8 +528,8 @@
       <xmltvid>srklass.sr.se</xmltvid>
     </channel>
     <channel id="2619" name="P2 Världen">
-      <image>http://sverigesradio.se/sida/images/2619/3234181_1400_1400.jpg?preset=api-default-square</image>
-      <imagetemplate>http://sverigesradio.se/sida/images/2619/3234181_1400_1400.jpg</imagetemplate>
+      <image>http://sverigesradio.se/sida/images/2619/3598404_1400_1400.jpg?preset=api-default-square</image>
+      <imagetemplate>http://sverigesradio.se/sida/images/2619/3598404_1400_1400.jpg</imagetemplate>
       <color>ff5a00</color>
       <tagline />
       <siteurl>http://sverigesradio.se/srvarlden/</siteurl>
@@ -528,7 +543,8 @@
     <channel id="2383" name="SR Extra01">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="2383">
         <url>http://sverigesradio.se/topsy/direkt/2383.mp3</url>
         <statkey>/app/direkt/sr extra01[k(2383)]</statkey>
@@ -538,7 +554,8 @@
     <channel id="2384" name="SR Extra02">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="2384">
         <url>http://sverigesradio.se/topsy/direkt/2384.mp3</url>
         <statkey>/app/direkt/sr extra02[k(2384)]</statkey>
@@ -548,7 +565,8 @@
     <channel id="2385" name="SR Extra03">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="2385">
         <url>http://sverigesradio.se/topsy/direkt/2385.mp3</url>
         <statkey>/app/direkt/sr extra03[k(2385)]</statkey>
@@ -558,7 +576,8 @@
     <channel id="2386" name="SR Extra04">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="2386">
         <url>http://sverigesradio.se/topsy/direkt/2386.mp3</url>
         <statkey>/app/direkt/sr extra04[k(2386)]</statkey>
@@ -568,7 +587,8 @@
     <channel id="2387" name="SR Extra05">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="2387">
         <url>http://sverigesradio.se/topsy/direkt/2387.mp3</url>
         <statkey>/app/direkt/sr extra05[k(2387)]</statkey>
@@ -578,7 +598,8 @@
     <channel id="2388" name="SR Extra06">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="2388">
         <url>http://sverigesradio.se/topsy/direkt/2388.mp3</url>
         <statkey>/app/direkt/sr extra06[k(2388)]</statkey>
@@ -588,7 +609,8 @@
     <channel id="2389" name="SR Extra07">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="2389">
         <url>http://sverigesradio.se/topsy/direkt/2389.mp3</url>
         <statkey>/app/direkt/sr extra07[k(2389)]</statkey>
@@ -598,7 +620,8 @@
     <channel id="2390" name="SR Extra08">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="2390">
         <url>http://sverigesradio.se/topsy/direkt/2390.mp3</url>
         <statkey>/app/direkt/sr extra08[k(2390)]</statkey>
@@ -608,7 +631,8 @@
     <channel id="3268" name="SR Extra09">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="3268">
         <url>http://sverigesradio.se/topsy/direkt/3268.mp3</url>
         <statkey>/app/direkt/sr extra09[k(3268)]</statkey>
@@ -618,34 +642,90 @@
     <channel id="3269" name="SR Extra10">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/radiosporten</siteurl>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
       <liveaudio id="3269">
         <url>http://sverigesradio.se/topsy/direkt/3269.mp3</url>
         <statkey>/app/direkt/sr extra10[k(3269)]</statkey>
       </liveaudio>
       <channeltype>Extrakanaler</channeltype>
     </channel>
-    <channel id="3703" name="SR Extra 11">
+    <channel id="3036" name="P2 Klassisk jul">
+      <image>http://sverigesradio.se/sida/images/3036/3429408_1400_1400.jpg?preset=api-default-square</image>
+      <imagetemplate>http://sverigesradio.se/sida/images/3036/3429408_1400_1400.jpg</imagetemplate>
+      <tagline />
+      <siteurl>http://sverigesradio.se/sida/default.aspx?programid=3036</siteurl>
+      <liveaudio id="3036">
+        <url>http://sverigesradio.se/topsy/direkt/3036.mp3</url>
+        <statkey>/app/direkt/p2 klassisk jul[k(3036)]</statkey>
+      </liveaudio>
+      <channeltype>Fler kanaler</channeltype>
+    </channel>
+    <channel id="3034" name="P4 Bjällerklang">
+      <image>http://sverigesradio.se/sida/images/3034/2601479_512_512.jpg?preset=api-default-square</image>
+      <imagetemplate>http://sverigesradio.se/sida/images/3034/2601479_512_512.jpg</imagetemplate>
+      <tagline />
+      <siteurl>http://sverigesradio.se/sida/default.aspx?programid=3034</siteurl>
+      <liveaudio id="3034">
+        <url>http://sverigesradio.se/topsy/direkt/3034.mp3</url>
+        <statkey>/app/direkt/p4 bjällerklang[k(3034)]</statkey>
+      </liveaudio>
+      <channeltype>Fler kanaler</channeltype>
+    </channel>
+    <channel id="4842" name="SR Extra13">
       <image />
       <imagetemplate>http://sverigesradio.se/</imagetemplate>
-      <siteurl>http://sverigesradio.se/sida/default.aspx?programid=3703</siteurl>
-      <liveaudio id="3703">
-        <url>http://sverigesradio.se/topsy/direkt/3703.mp3</url>
-        <statkey>/app/direkt/sr extra 11[k(3703)]</statkey>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
+      <liveaudio id="4842">
+        <url>http://sverigesradio.se/topsy/direkt/4842.mp3</url>
+        <statkey>/app/direkt/sr extra13[k(4842)]</statkey>
       </liveaudio>
       <channeltype>Extrakanaler</channeltype>
     </channel>
-    <channel id="2521" name="P4 Melodifest">
-      <image>http://sverigesradio.se/sida/images/2521/2216766_512_512.jpg?preset=api-default-square</image>
-      <imagetemplate>http://sverigesradio.se/sida/images/2521/2216766_512_512.jpg</imagetemplate>
+    <channel id="4866" name="SR Extra14">
+      <image />
+      <imagetemplate>http://sverigesradio.se/</imagetemplate>
       <tagline />
-      <siteurl>http://sverigesradio.se/sida/default.aspx?programid=2521</siteurl>
-      <liveaudio id="2521">
-        <url>http://sverigesradio.se/topsy/direkt/2521.mp3</url>
-        <statkey>/app/direkt/p4 melodifest[k(2521)]</statkey>
+      <siteurl>http://sverigesradio.se/</siteurl>
+      <liveaudio id="4866">
+        <url>http://sverigesradio.se/topsy/direkt/4866.mp3</url>
+        <statkey>/app/direkt/sr extra14[k(4866)]</statkey>
       </liveaudio>
-      <scheduleurl>http://sverigesradio.se/api/v2/scheduledepisodes?channelid=2521</scheduleurl>
-      <channeltype>Fler kanaler</channeltype>
+      <channeltype>Extrakanaler</channeltype>
+    </channel>
+    <channel id="4868" name="SR Extra15">
+      <image />
+      <imagetemplate>http://sverigesradio.se/</imagetemplate>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
+      <liveaudio id="4868">
+        <url>http://sverigesradio.se/topsy/direkt/4868.mp3</url>
+        <statkey>/app/direkt/sr extra15[k(4868)]</statkey>
+      </liveaudio>
+      <channeltype>Extrakanaler</channeltype>
+    </channel>
+    <channel id="4869" name="SR Extra16">
+      <image />
+      <imagetemplate>http://sverigesradio.se/</imagetemplate>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
+      <liveaudio id="4869">
+        <url>http://sverigesradio.se/topsy/direkt/4869.mp3</url>
+        <statkey>/app/direkt/sr extra16[k(4869)]</statkey>
+      </liveaudio>
+      <channeltype>Extrakanaler</channeltype>
+    </channel>
+    <channel id="4870" name="SR Extra17">
+      <image />
+      <imagetemplate>http://sverigesradio.se/</imagetemplate>
+      <tagline />
+      <siteurl>http://sverigesradio.se/</siteurl>
+      <liveaudio id="4870">
+        <url>http://sverigesradio.se/topsy/direkt/4870.mp3</url>
+        <statkey>/app/direkt/sr extra17[k(4870)]</statkey>
+      </liveaudio>
+      <channeltype>Extrakanaler</channeltype>
     </channel>
   </channels>
 </sr>
