@@ -1,12 +1,12 @@
-require_relative "../classes/html"
+# require_relative "../classes/html"
 
-module Station
-  class RadioDcm < Base::HTML
-    def process
-      track = data.at_css("body").content.
-        match(/ONAIR: (.+?)BEFORE:/).to_a.last
-      artist, song = track && split(track)
-      {song: song, artist: artist}
-    end
-  end
-end
+# module Station
+#   class RadioDcm < Base::HTML
+#     def process
+#       track = data.at_css("body").content.
+#         match(/ONAIR: (.+?)BEFORE:/).to_a.last
+#       artist, song = track && split(track)
+#       {song: song, artist: artist}
+#     end
+#   end
+# end
