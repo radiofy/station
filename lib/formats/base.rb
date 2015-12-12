@@ -2,6 +2,7 @@ require "music_sanitizer"
 require "rest-client"
 require "active_support/all"
 require "nokogiri"
+require "pp"
 
 module Station
   @@subclasses = []
@@ -68,12 +69,16 @@ module Station
       end
 
       def self.config(&block)
-        @@config ||= Config.new
-        @@config.instance_eval(&block)
+        if block_given?
+          @config = Config.new
+          @config.instance_exec(&block)
+        else
+          @config
+        end
       end
 
       def config
-        @@config
+        self.class.config
       end
 
       protected
@@ -115,7 +120,6 @@ module Station
       private
 
       def data
-        puts ":::: #{config.read_url}"
         @_data ||= RestClient.get(config.read_url)
       rescue RestClient::Exception
         raise ExternalError.new($!)
