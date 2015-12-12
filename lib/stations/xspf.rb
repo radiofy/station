@@ -1,7 +1,7 @@
 # require_relative "../classes/xml"
 
 # module Station
-#   class XSPF < Base::XML
+#   class XSPF < Format::XML
 #     def process
 #       artist, song = split(data.at_css("track title").try(:text))
 #       return {

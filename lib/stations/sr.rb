@@ -1,7 +1,7 @@
 # require_relative "../classes/xml"
 
 # module Station
-#   class Sr < Base::XML
+#   class Sr < Format::XML
 #     def process
 #       artist = data.at_css("artist").try(:text)
 #       song = data.at_css("title").try(:text)

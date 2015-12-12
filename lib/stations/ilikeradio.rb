@@ -1,7 +1,7 @@
 # require_relative "../classes/json"
 
 # module Station
-#   class Ilikeradio < Base::JSON
+#   class Ilikeradio < Format::JSON
 #     def process
 #       thing   = data.select{ |ss| ss.fetch("id") == args.fetch(:id) }.first
 #       track  = thing && thing.fetch("currentsong").fetch("song")

@@ -1,7 +1,7 @@
 # require_relative "../classes/json"
 
 # module Station
-#   class RadioAfLundsStudentradio < Base::JSON
+#   class RadioAfLundsStudentradio < Format::JSON
 #     def process
 #       { 
 #         artist: data["data"]["artist"], 

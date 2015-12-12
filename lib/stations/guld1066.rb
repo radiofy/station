@@ -1,7 +1,7 @@
 # require_relative "../classes/raw"
 
 # module Station
-#   class Guld1066 < Base::Raw
+#   class Guld1066 < Format::Raw
 #     def process
 #       raw = data.scan(/var\s*(.+?)\s*=\s*'(.+?)'/)
 #       {

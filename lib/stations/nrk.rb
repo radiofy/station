@@ -1,7 +1,7 @@
 # require_relative "../classes/xml"
 
 # module Station
-#   class NRK < Base::XML
+#   class NRK < Format::XML
 #     def process
 #       track = data.at_css("trackList track title").try(:text)
 #       return if track && track.match(/^Neste Blir/i)

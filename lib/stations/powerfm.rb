@@ -1,7 +1,7 @@
 # require_relative "../classes/json"
 
 # module Station
-#   class Powerfm < Base::JSON
+#   class Powerfm < Format::JSON
 #     def process
 #       {
 #         song: data["current_song"],

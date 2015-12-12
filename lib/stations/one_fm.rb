@@ -1,7 +1,7 @@
 # require_relative "../classes/raw"
 
 # module Station
-#   class OneFm < Base::Raw
+#   class OneFm < Format::Raw
 #     def process
 #       doc = Nokogiri::HTML(data.gsub("<!--", "").gsub("-->", ""))
 #       track = doc.at_css("a.dedsngbtn")

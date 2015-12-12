@@ -1,7 +1,7 @@
 # require_relative "../classes/jsonp"
 
 # module Station
-#   class SoundicRadio < Base::JSONP
+#   class SoundicRadio < Format::JSONP
 #     def process
 #       { artist: data["artist"], song: data["title"] }
 #     end

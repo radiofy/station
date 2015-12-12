@@ -1,7 +1,7 @@
 # require_relative "../classes/xml"
 
 # module Station
-#   class Ordentligradio < Base::XML
+#   class Ordentligradio < Format::XML
 #     def process
 #       { 
 #         artist: data.at_css("artist").text, 

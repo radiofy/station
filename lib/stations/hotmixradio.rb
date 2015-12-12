@@ -1,7 +1,7 @@
 # require_relative "../classes/xml"
 
 # module Station
-#   class Hotmixradio < Base::XML
+#   class Hotmixradio < Format::XML
 #     def process
 #       {
 #         song: data.at_css("title").try(:content),

@@ -1,7 +1,7 @@
 # require_relative "../classes/raw"
 
 # module Station
-#   class Julradio < Base::Raw
+#   class Julradio < Format::Raw
 #     def process
 #       artist, song = split(data)
 #       { artist: artist, song: song }

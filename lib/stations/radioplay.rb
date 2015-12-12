@@ -1,7 +1,7 @@
 # require_relative "../classes/jsonp"
 
 # module Station
-#   class Radioplay < Base::JSONP
+#   class Radioplay < Format::JSONP
 #     def process
 #       return unless data = data[args.fetch(:id)]
 #       {

@@ -1,7 +1,7 @@
 # require_relative "../classes/xml"
 
 # module Station
-#   class RadioVeronica < Base::XML
+#   class RadioVeronica < Format::XML
 #     def process
 #       {
 #         song: data.at_css("attribute[name=cue_title]").text,

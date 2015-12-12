@@ -1,7 +1,7 @@
 # require_relative "../classes/xml"
 
 # module Station
-#   class Energy < Base::XML
+#   class Energy < Format::XML
 #     def process
 #       media = ["artist", "song"].map{ |w| data.at_css("Item #{w}").try(:content) }
 #       {

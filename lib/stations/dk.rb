@@ -1,7 +1,7 @@
 # require_relative "../classes/json"
 
 # module Station
-#   class DK < Base::JSON
+#   class DK < Format::JSON
 #     def process
 #       track = data["now"]
 #       if track["status"] == "music"
