@@ -1,10 +1,13 @@
-# require_relative "../classes/raw"
+module Station
+  class Julradio < Format::Raw
+    config do
+      id "julradio"
+      url "http://julradio.se/inc/now_playing.php"
+    end
 
-# module Station
-#   class Julradio < Format::Raw
-#     def process
-#       artist, song = split(data)
-#       { artist: artist, song: song }
-#     end
-#   end
-# end
+    def process
+      artist, song = split(data)
+      { artist: artist, song: song }
+    end
+  end
+end

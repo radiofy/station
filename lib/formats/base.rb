@@ -37,6 +37,14 @@ module Station
         song   = content.fetch(:song)
         artist = content.fetch(:artist)
 
+        if config.exclude.is_a?(Array)
+          config.exclude.each do |el|
+            if el.match(/#{song}/i) or el.match(/#{artist}/i)
+              return NO_MATCH
+            end
+          end
+        end
+
         # Is fetched data empty?
         if song.blank? or artist.blank?
           fail NoData,
@@ -133,10 +141,16 @@ module Station
         value ? @url = value : @url
       end
 
+      def exclude(value = nil)
+        value ? @exclude = value : @exclude
+      end
+
       def disabled(value = nil)
         value ? @disabled = true : @disabled
       end
     end
+
+    NO_MATCH = true
 
     class InvalidDataFromSource < StandardError
     end
