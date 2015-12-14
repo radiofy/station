@@ -21,13 +21,14 @@ module Station
 
       attr_reader :data, :args
 
-      def initialize
+      def initialize(data)
         raise "id in parent isn't set" if config.id.blank?
         raise "url in parent isn't set" if config.url.blank?
+        @data = data
       end
 
       def perform
-        fail NoData, "No data" if content.nil?
+        return NO_MATCH if content.blank?
 
         unless content.is_a?(Hash)
           fail InvalidDataFromSource, 
@@ -122,14 +123,6 @@ module Station
       def fail(klass, message)
         raise klass, "[#{config.id}] #{message}"
       end
-
-      private
-
-      def data
-        @_data ||= RestClient.get(config.url)
-      rescue RestClient::Exception
-        raise ExternalError.new($!)
-      end
     end
 
     class Config
@@ -150,7 +143,7 @@ module Station
       end
     end
 
-    NO_MATCH = true
+    NO_MATCH = false
 
     class InvalidDataFromSource < StandardError
     end
