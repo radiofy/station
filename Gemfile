@@ -5,11 +5,13 @@ gemspec
 
 gem "music_sanitizer"
 gem "nokogiri"
-gem "rest-client"
 gem "activesupport"
 
 group :test do
   gem "rspec"
   gem "vcr"
   gem "webmock"
+  gem "byebug"
+  gem "http"
+  gem "rest-client"
 end

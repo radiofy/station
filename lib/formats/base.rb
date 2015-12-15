@@ -1,8 +1,6 @@
 require "music_sanitizer"
-require "rest-client"
 require "active_support/all"
 require "nokogiri"
-require "pp"
 
 module Station
   @@subclasses = []
@@ -18,6 +16,8 @@ module Station
           Station.stations << base
         end
       end
+
+      NO_MATCH = false
 
       attr_reader :data, :args
 
@@ -39,17 +39,14 @@ module Station
         artist = content.fetch(:artist)
 
         if config.exclude.is_a?(Array)
-          config.exclude.each do |el|
-            if el.match(/#{song}/i) or el.match(/#{artist}/i)
-              return NO_MATCH
-            end
+          return NO_MATCH if config.exclude.any? do |el|
+            el.match(/#{song}/i) or el.match(/#{artist}/i)
           end
         end
 
         # Is fetched data empty?
         if song.blank? or artist.blank?
-          fail NoData,
-            "song or artist is blank song=#{song}, artist=#{artist}"
+          return NO_MATCH
         end
 
         artist   = artist.split(/\s+&\s+/).first
@@ -58,8 +55,7 @@ module Station
 
         # Is striped data empty?
         if c_song.blank? or c_artist.blank?
-          fail NoData, 
-            "song or artist is blank after processing song=#{song}, artist=#{artist}"
+          return NO_MATCH
         end
 
         return {
@@ -117,7 +113,7 @@ module Station
       end
 
       def content
-        @_content ||= process
+        @_content ||= process(*(config.args || []))
       end
 
       def fail(klass, message)
@@ -141,17 +137,10 @@ module Station
       def disabled(value = nil)
         value ? @disabled = true : @disabled
       end
-    end
 
-    NO_MATCH = false
-
-    class InvalidDataFromSource < StandardError
-    end
-
-    class NoData < StandardError
-    end
-
-    class ExternalError < StandardError
+      def args(value = nil)
+        value ? @args = value : @args
+      end
     end
   end
 end

@@ -1,5 +1,7 @@
 require "rspec"
 require "vcr"
+require "byebug"
+require "http"
 require_relative "../lib/stations"
 
 RSpec.configure do |config|

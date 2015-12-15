@@ -1,9 +1,12 @@
-# require_relative "../classes/jsonp"
+module Station
+  class SoundicRadio < Format::JSON
+    config do
+      url "http://api.soundicradio.com/"
+      id "soundic-radio"
+    end
 
-# module Station
-#   class SoundicRadio < Format::JSONP
-#     def process
-#       { artist: data["artist"], song: data["title"] }
-#     end
-#   end
-# end
+    def process
+      { artist: data["current_artist"], song: data["current_song"] }
+    end
+  end
+end
