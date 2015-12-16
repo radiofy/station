@@ -1,12 +1,12 @@
-# require_relative "../classes/xml"
+module Station
+  class Ordentligradio < Format::XML
+    config do
+      id "ordentligradio"
+      url "http://dj1.no/nowplaying.xml"
+    end
 
-# module Station
-#   class Ordentligradio < Format::XML
-#     def process
-#       { 
-#         artist: data.at_css("artist").text, 
-#         song: data.at_css("title").text
-#       }
-#     end
-#   end
-# end
+    def process
+      { :artist => (data.at_css("artist").text), :song => (data.at_css("title").text) }
+    end
+  end
+end

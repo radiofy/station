@@ -1,6 +1,7 @@
 require "http"
 require "timeout"
 require "pp"
+require "charlock_holmes/string"
 
 class Get
   def initialize
@@ -11,6 +12,13 @@ class Get
     url = station.config.url
     Timeout::timeout(2) do
       @urls[url] ||= HTTP.get(url).to_s
+
+      detection = CharlockHolmes::EncodingDetector.detect(@urls[url])
+      if detection[:encoding]
+        CharlockHolmes::Converter.convert @urls[url], detection[:encoding], 'UTF-8'
+      else
+        @urls[url]
+      end
     end
   rescue Errno::ENOTCONN, Errno::ECONNRESET, Errno::ENOTCONN, IOError, SocketError, Timeout::Error
     return false

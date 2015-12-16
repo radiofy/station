@@ -1,14 +1,16 @@
-# require_relative "../classes/html"
+module Station
+  class RadioClubzone < Format::HTML
+    config do
+      id "radio-clubzone"
+      url "http://www.radioclubzone.com/scripts/ajxshowtrack.php"
+    end
 
-# module Station
-#   class RadioClubzone < Format::HTML
-#     url "http://www.radioclubzone.com/scripts/ajxshowtrack.php"
-    
-#     def process
-#       track = data.at_css("b").parent
-#       track && track.at_css("b").remove
-#       artist, song = track && split(track.text)
-#       {artist: artist, song: song}
-#     end
-#   end
-# end
+    def process
+      track = data.at_css("b").parent
+      (track and track.at_css("b").remove)
+      artist, song = (track and split(track.text))
+      { :artist => (artist), :song => (song) }
+
+    end
+  end
+end

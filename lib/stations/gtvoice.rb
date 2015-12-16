@@ -1,11 +1,15 @@
-# require_relative "../classes/html"
+module Station
+  class Gtvoice < Format::HTML
+    config do
+      id "gtvoice"
+      url "http://gtvoice.org/radiostats.php"
+    end
 
-# module Station
-#   class Gtvoice < Format::HTML
-#     def process
-#       track = data.at_css("marquee")
-#       artist, song = track && split(track.text)
-#       {song: song, artist: artist}
-#     end
-#   end
-# end
+    def process
+      track = data.at_css("marquee")
+      artist, song = (track and split(track.text))
+      { :song => (song), :artist => (artist) }
+
+    end
+  end
+end

@@ -7,8 +7,9 @@ module Station
 
     def process
       track = data.at_css("#Box").content
-      artist, song = track && split(track.split("\n").last.strip)
-      { artist: artist, song: song }
+      artist, song = (track and split(track.split("\n").last.strip))
+      { :artist => (artist), :song => (song) }
+
     end
   end
 end

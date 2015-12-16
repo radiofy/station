@@ -1,10 +1,12 @@
-# require_relative "../classes/html"
+module Station
+  class OmgkpopRadio < Format::XSPF
+    config do
+      id "omgkpop-radio"
+      url "http://stream.omgkpop.com:8234/autodj.xspf"
+    end
 
-# module Station
-#   class OmgkpopRadio < XSPF
-#     def process
-#       data = super
-#       { artist: data[:song], song: data[:artist] }
-#     end
-#   end
-# end
+    def process
+      { artist: data[:song], song: data[:artist] }
+    end
+  end
+end

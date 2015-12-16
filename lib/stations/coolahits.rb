@@ -1,5 +1,5 @@
 module Station
-  class Coolahits < Format::HTML
+  class Coolahit < Format::HTML
     config do
       id "coolahits"
       url "http://www.coolahits.se/last10_2.asp"
@@ -7,7 +7,8 @@ module Station
 
     def process
       artist, song = split(data.css("font").last.try(:text))
-      { song: song, artist: artist }
+      { :song => (song), :artist => (artist) }
+
     end
   end
 end
