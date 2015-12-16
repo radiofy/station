@@ -1,5 +1,6 @@
 require "http"
 require "timeout"
+require "pp"
 
 class Get
   def initialize
@@ -19,7 +20,7 @@ end
 describe Station do
   get = Get.new
   Station.stations.each do |station|
-    unless station.config.disabled
+    if not station.config.disabled
       it "should work with #{station.config.id}", :vcr do
         if data = get.get(station)
           if result = station.new(data).perform
@@ -31,6 +32,8 @@ describe Station do
           skip("Could not fetch #{station.config.id}")
         end
       end
+    else
+      skip("#{station.config.id} is disabled")
     end
   end
 end
