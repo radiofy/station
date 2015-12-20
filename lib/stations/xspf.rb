@@ -1,8 +1,5 @@
 module Station
   [{
-    id: "musique",
-    url: "http://ice.casterplay.net:8000/lounge.xspf"
-  }, {
     id: "aura",
     url: "http://stream.anr.dk/aura.xspf",
   }].each do |info|
