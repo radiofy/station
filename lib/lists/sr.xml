@@ -464,19 +464,6 @@
       <channeltype>Rikskanal</channeltype>
       <xmltvid>p5sthlm.sr.se</xmltvid>
     </channel>
-    <channel id="2562" name="P2">
-      <image>http://sverigesradio.se/sida/images/2562/3082333_512_512.jpg?preset=api-default-square</image>
-      <imagetemplate>http://sverigesradio.se/sida/images/2562/3082333_512_512.jpg</imagetemplate>
-      <color>ff5a00</color>
-      <siteurl>http://sverigesradio.se/sida/tabla.aspx?programid=2562</siteurl>
-      <liveaudio id="2562">
-        <url>http://sverigesradio.se/topsy/direkt/2562.mp3</url>
-        <statkey>/app/direkt/p2[k(2562)]</statkey>
-      </liveaudio>
-      <scheduleurl>http://sverigesradio.se/api/v2/scheduledepisodes?channelid=2562</scheduleurl>
-      <channeltype>Fler kanaler</channeltype>
-      <xmltvid>p2musik.sr.se</xmltvid>
-    </channel>
     <channel id="1607" name="P3 Star">
       <image>http://sverigesradio.se/sida/images/1607/3451450_1400_1400.jpg?preset=api-default-square</image>
       <imagetemplate>http://sverigesradio.se/sida/images/1607/3451450_1400_1400.jpg</imagetemplate>

@@ -1,5 +1,14 @@
 describe Station do
   get = Get.new
+  Station.stations.inject({}) do |result, station|
+    if result[station.config.id]
+      raise "#{station.config.id} exists more then once"
+    end
+
+    result[station.config.id] = 1
+    result
+  end
+
   Station.stations.each do |station|
     if ENV["STATION"] and not station.config.id.include?(ENV["STATION"])
       next
