@@ -6,10 +6,9 @@ module Station
     end
 
     def process
-      data = data.at_css("#lastsong").to_s.match(/<strong>N\u00E5:<\/strong>(.+?)<br>/).to_a[1]
-      artist, song = (data and split(data))
-      { :artist => (artist), :song => (song) }
-
+      raw = data.at_css("#lastsong").to_s.match(/<strong>N\u00E5:<\/strong>(.+?)<br>/).to_a[1]
+      artist, song = raw && split(raw)
+      { artist: artist, song: song }
     end
   end
 end

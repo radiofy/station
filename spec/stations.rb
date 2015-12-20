@@ -11,7 +11,7 @@ class Get
   def get(station)
     url = station.config.url
     Timeout::timeout(2) do
-      @urls[url] ||= HTTP.get(url).to_s
+      @urls[url] ||= `curl --silent --compressed '#{url}'`
 
       detection = CharlockHolmes::EncodingDetector.detect(@urls[url])
       if detection[:encoding]
