@@ -6,7 +6,10 @@ module Station
     end
 
     def process
-      { :song => (data["airplays"].first["Title"]), :artist => (data["airplays"].first["Artist"]) }
+      {
+        song: data["airplays"].first["Title"],
+        artist: data["airplays"].first["Artist"]
+      }
     end
   end
 end

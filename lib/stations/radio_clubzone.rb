@@ -6,11 +6,10 @@ module Station
     end
 
     def process
-      track = data.at_css("b").parent
-      (track and track.at_css("b").remove)
-      artist, song = (track and split(track.text))
-      { :artist => (artist), :song => (song) }
-
+      return unless track = data.at_css("b").parent
+      track = track.at_css("b").remove
+      artist, song = track && split(track.text)
+      { artist: artist, song: song }
     end
   end
 end

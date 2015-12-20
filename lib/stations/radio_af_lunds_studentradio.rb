@@ -6,7 +6,7 @@ module Station
     end
 
     def process
-      { :artist => (data["data"]["artist"]), :song => (data["data"]["song"]) }
+      { artist: (data["data"]["artist"]), song: (data["data"]["song"]) }
     end
   end
 end
