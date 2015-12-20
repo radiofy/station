@@ -18,17 +18,11 @@ module Station
     id: "radiobastad",
     url: "http://212.31.164.21:8000/"
   }, {
-    id: "gold24-fm",
-    url: "http://gold24.fm:8084/"
-  }, {
     id: "kbk-radio",
     url: "http://media.kbkradio.se:80"
   }, {
     id: "kanal-rewind",
     url: "http://radio.euronet.nu:8000"
-  }, {
-    id: "gullkanalen",
-    url: "http://67.212.189.122:8010/"
   }].each do |info|
     Class.new(Format::Shoutcast) do
       config do
