@@ -2,6 +2,30 @@
 
 Station parsers for [Radiofy.se](http://radiofy.se). Not yet in production.
 
+## Example station
+
+``` ruby
+module Station
+  class MyStation < Format::JSON
+    config do
+      id "unique-id"
+      url "http://example.com/current-song.json"
+    end
+
+    def process
+      { artist: data[:artist], song: data[:title] }
+    end
+  end
+end
+```
+
+## Check station
+
+`EXPAND=1 STATION=unique-id bundle exec rake`
+## Check all stations
+
+`EXPAND=1 bundle exec rake`
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/stations/fork )
