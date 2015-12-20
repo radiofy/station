@@ -14,7 +14,7 @@ task :run do
   get = Get.new
   Station.stations.each do |station|
     if ENV["STATION"] and not station.config.id.include?(ENV["STATION"])
-      next log(station,"disabled", :cyan)
+      next
     end
 
     if station.config.disabled

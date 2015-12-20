@@ -8,8 +8,7 @@ module Station
     def process
       track = data.at_css("body").content.match(/Spelas Nu: (.+)$/).to_a.last
       artist, song = (track and split(track))
-      { :song => (song), :artist => (artist) }
-
+      { song: song, artist: artist }
     end
   end
 end

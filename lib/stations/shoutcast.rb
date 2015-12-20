@@ -15,9 +15,6 @@ module Station
     id: "countrykanalen",
     url: "http://37.187.90.121:3326",
   }, {
-    id: "netrock101",
-    url: "http://netrock101.servebeer.com:9000"
-  }, {
     id: "radiobastad",
     url: "http://212.31.164.21:8000/"
   }, {
