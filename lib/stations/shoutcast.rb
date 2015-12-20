@@ -3,9 +3,6 @@ module Station
     id: "radio943",
     url: "http://212.105.73.74:8007/"
   }, {
-    id: "playdio",
-    url: "http://141.255.187.217:80"
-  }, {
     id: "countrykanalen",
     url: "http://37.187.90.121:3326",
   }, {
