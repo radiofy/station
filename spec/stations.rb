@@ -28,7 +28,7 @@ end
 describe Station do
   get = Get.new
   Station.stations.each do |station|
-    if ENV["STATION"] and ENV["STATION"] != station.config.id
+    if ENV["STATION"] and not station.config.id.include?(ENV["STATION"])
       next
     end
 
