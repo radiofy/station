@@ -8,8 +8,7 @@ module Station
     def process
       track = data.at_css(".item.playing.active").attr("data-d")
       artist, song = split(track.gsub(/^\d+:\d+\s*/, ""))
-      { :artist => (artist), :song => (song) }
-
+      { artist: artist, song: song }
     end
   end
 end

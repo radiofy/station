@@ -6,7 +6,10 @@ module Station
     end
 
     def process
-      { :artist => (data.at_css("artist").text), :song => (data.at_css("title").text) }
+      { 
+        artist: data.at_css("artist").text, 
+        song: data.at_css("title").text
+      }
     end
   end
 end
