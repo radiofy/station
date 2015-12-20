@@ -1,8 +1,5 @@
 module Station
   [{
-    id: "radiohfs",
-    url: "http://www.grythyttan.se:8000/"
-  }, {
     id: "radio943",
     url: "http://212.105.73.74:8007/"
   }, {
@@ -20,6 +17,9 @@ module Station
   }, {
     id: "kanal-rewind",
     url: "http://radio.euronet.nu:8000"
+  }, {
+    id: "radiohfs",
+    url: "http://www.grythyttan.se:8000/index.html"
   }].each do |info|
     Class.new(Format::Shoutcast) do
       config do

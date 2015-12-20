@@ -8,8 +8,7 @@ module Station
     def process
       song = data.at_css("Current titleName").try(:text)
       artist = data.at_css("Current artistName").try(:text)
-      { :song => (song), :artist => (artist) }
-
+      { song: song, artist: artist }
     end
   end
 end
