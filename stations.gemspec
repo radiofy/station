@@ -3,13 +3,13 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = "stations"
+  spec.name          = "station"
   spec.version       = "1.0.0"
   spec.authors       = ["Linus Oleander"]
   spec.email         = ["linus@oleander.nu"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Station parsers for radiofy.se}
+  spec.description   = %q{Station parsers for radiofy.se}
+  spec.homepage      = "http://radiofy.se"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

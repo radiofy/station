@@ -1,26 +1,6 @@
-# Stations
+# Station
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'stations'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install stations
-
-## Usage
-
-TODO: Write usage instructions here
+Station parsers for [Radiofy.se](http://radiofy.se). Not yet in production.
 
 ## Contributing
 
