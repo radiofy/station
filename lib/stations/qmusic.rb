@@ -2,13 +2,12 @@ module Station
   class Qmusic < Format::HTML
     config do
       id "qmusic"
-      url "http://q-music.be/"
+      url "http://qmusic.be/playlist"
     end
 
     def process
-      track = data.at_css(".song_active .kader")
-      artist = track && track.at_css("artist")
-      song = track && track.at_css("songtitle")
+      song = data.at_css(".track:nth-child(1) .track-name").try(:text)
+      artist = data.at_css(".track:nth-child(1) .artist-name").try(:text)
       { artist: artist, song: song }
     end
   end
