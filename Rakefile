@@ -18,7 +18,7 @@ task :run do
     end
 
     if station.config.disabled
-      next log(station,"disabled", :black)
+      next # log(station,"disabled", :black)
     end
 
     unless data = get.get(station)

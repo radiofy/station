@@ -9,8 +9,8 @@ module Station
     def process
       return unless track = data["ProgramInstance"]["Elements"].first
       song = track["TrackTitle"]
-      artist = track["Artist"]["Name"]
-      { artist: artist, song: song }
+      return unless artist = track["Artist"]
+      { artist: artist["Name"], song: song }
     end
   end
 end
