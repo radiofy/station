@@ -28,6 +28,10 @@ end
 describe Station do
   get = Get.new
   Station.stations.each do |station|
+    if ENV["STATION"] and ENV["STATION"] != station.config.id
+      next
+    end
+
     if not station.config.disabled
       it "should work with #{station.config.id}", :vcr do
         if data = get.get(station)

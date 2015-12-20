@@ -1,10 +1,13 @@
-# require_relative "../classes/raw"
+module Station
+  class OneLive < Format::Raw
+    config do
+      id "1live"
+      url "http://www.einslive.de/radiotext/RADIOTXT.TXT"
+    end
 
-# module Station
-#   class OneLive < Format::Raw
-#     def process
-#       artist, song = data.split(" mit ", 2)
-#       { artist: artist, song: song }
-#     end
-#   end
-# end
+    def process
+      artist, song = data.split(" mit ", 2)
+      { artist: artist, song: song }
+    end
+  end
+end

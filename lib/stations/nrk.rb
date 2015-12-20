@@ -97,18 +97,11 @@ module Station
     id: "nrk-evenement-2",
     url: "http://lyd.nrk.no/nrk_radio_weblyd02_mp3_m.xspf"
   }].each do |info|
-    Class.new(Format::XML) do
+    Class.new(Format::NRK) do
       config do
         id info.fetch(:id)
         url info.fetch(:url)
         exclude ["Neste Blir"]
-      end
-
-      def process
-        track = data.at_css("trackList track title").try(:text)
-        song, artist = track && track.split(" med ", 2)
-        artist = artist && artist.split(/\s+\+\s+/).first
-        { song: song, artist: artist }
       end
     end
   end

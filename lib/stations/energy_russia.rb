@@ -7,8 +7,10 @@ module Station
     end
 
     def process
-      song = data["result"]["title"]
-      artist = data["result"]["about"]["executor_title"]
+      track = data["result"]
+      return unless track
+      song = track["title"]
+      artist = track["about"]["executor_title"]
       { artist: artist, song: song }
     end
   end

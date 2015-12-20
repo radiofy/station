@@ -9,8 +9,11 @@ module Station
       result = data.search("//div[@class='roundcont']//table[//td[contains(text(), 'SGR')]]/tr").select do |row|
         row.at_css("td").text.include?("Current Song")
       end
-      { :song => "", :artist => "" }
-
+      track = result.first.try(:text)
+      return unless track
+      track = track.gsub(/Current Song:/, "")
+      artist, song = split(track)
+      { song: song , artist: artist }
     end
   end
 end

@@ -7,10 +7,9 @@ module Station
 
     def process
       track = data.search("//Song[//Position[contains(text(),0)]]").first
-      artist = (track and track.at_css("Artist").try(:text))
-      song = (track and track.at_css("Title").try(:text))
-      { :song => (song), :artist => (artist) }
-
+      artist = track && track.at_css("Artist").try(:text)
+      song = track && track.at_css("Title").try(:text)
+      { song: song, artist: artist }
     end
   end
 end

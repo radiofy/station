@@ -38,15 +38,16 @@ module Station
         song   = content.fetch(:song)
         artist = content.fetch(:artist)
 
-        if config.exclude.is_a?(Array)
-          return NO_MATCH if config.exclude.any? do |el|
-            el.match(/#{song}/i) or el.match(/#{artist}/i)
-          end
-        end
-
         # Is fetched data empty?
         if song.blank? or artist.blank?
           return NO_MATCH
+        end
+
+        if config.exclude.is_a?(Array)
+          return NO_MATCH if config.exclude.any? do |el|
+            el.downcase.include?(song.downcase) or 
+              el.downcase.include?(artist.downcase)
+          end
         end
 
         artist   = artist.split(/\s+&\s+/).first

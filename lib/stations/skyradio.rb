@@ -6,8 +6,8 @@ module Station
     end
 
     def process
-      song = data.at_css("[name=cue_title]").text
-      artist = data.at_css("[name=track_artist_name]").text
+      song = data.at_css("[name=cue_title]").try(:text)
+      artist = data.at_css("[name=track_artist_name]").try(:text)
       { song: song, artist: artist }
     end
   end
