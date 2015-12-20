@@ -16,7 +16,7 @@ module Station
     url: "http://radio.euronet.nu:8000"
   }, {
     id: "radiohfs",
-    url: "http://www.grythyttan.se:8000/index.html"
+    url: "http://www.grythyttan.se:8000/"
   }].each do |info|
     Class.new(Format::Shoutcast) do
       config do
