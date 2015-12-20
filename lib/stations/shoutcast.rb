@@ -3,9 +3,6 @@ module Station
     id: "radiohfs",
     url: "http://www.grythyttan.se:8000/"
   }, {
-    id: "radioskelleftea",
-    url: "http://ch1.goldtown.se/"
-  }, {
     id: "radio943",
     url: "http://212.105.73.74:8007/"
   }, {
