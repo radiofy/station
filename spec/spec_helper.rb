@@ -3,6 +3,7 @@ require "vcr"
 require "byebug"
 require "http"
 require_relative "../lib/station"
+require_relative "../lib/get"
 
 RSpec.configure do |config|
   config.mock_with :rspec

@@ -6,10 +6,10 @@ module Station
     end
 
     def process
-      _, track = data.at_css("marquee").text.match(/SPELAS JUST NU:(.+?)\(\d+:\d+\)/).to_a
+       track = data.at_css("marquee").try(:text)
+      _, track = track.match(/SPELAS JUST NU:(.+?)\(\d+:\d+\)/).to_a
       artist, song = (track and split(track))
-      { :artist => (artist), :song => (song) }
-
+      { artist: artist, song: song }
     end
   end
 end

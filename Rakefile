@@ -1,59 +1,55 @@
 require "bundler/gem_tasks"
-require "sourcify"
-require "music_sanitizer"
-require "active_support/all"
-require "nokogiri"
+require_relative "./lib/get"
+require_relative "./lib/station"
 require "colorize"
-require "ruby-beautify"
+require "pp"
 
-# station({
-#   url "http://www.slamfm.nl/media/onair.xml",
-#   id "slam-fm",
-#   worker: "StationJob::XML"
-# }) do
-#   song = c.at_css("Current titleName").try(:text)
-#   artist = c.at_css("Current artistName").try(:text)
-#   { song: song, artist: artist }
-# end
-
-def station(params, &block)
-  name = params.fetch(:id)
-  unless block
-    return puts "Ignored #{name}"
-  end
-
-  source = block.to_source(strip_enclosure: true).gsub(/\bc\b/, "data")
-  klass = params.fetch(:worker).split("::").last
-  f_name = name.gsub("-", "_").gsub(/^\d+/, "R\\1").downcase
-  m_klass = f_name.classify
-
-code = %Q{module Station
-  class #{m_klass} < Format::#{klass}
-    config do
-      id "#{name}"
-      url "#{params.fetch(:url)}"
-    end
-
-    def process
-      #{source}
-    end
-  end
-end
-}
-
-  begin
-    f_code = RubyBeautify.pretty_string(code, indent_count: 2, indent_token: " ")
-  rescue
-    f_code = code
-  end
-
-  File.open("lib/stations/#{f_name}.rb", "w+") do |file|
-    file.write(f_code)
-  end
-
-  puts "wrote lib/stations/#{f_name}.rb"
+def log(station, message, color)
+  puts "[#{station.config.id}] #{message.send(color)}\n"
 end
 
-task :migrate do
-  require "./old.rb"
+task default: [:run]
+
+task :run do
+  get = Get.new
+  Station.stations.each do |station|
+    if ENV["STATION"] and not station.config.id.include?(ENV["STATION"])
+      next log(station,"disabled", :cyan)
+    end
+
+    if station.config.disabled
+      next log(station,"disabled", :black)
+    end
+
+    unless data = get.get(station)
+      next log(station,"no data found", :yellow)
+    end
+
+    begin
+      unless data = station.new(data).perform
+        next log(station,"could not parse", :red)
+      end
+    rescue
+      next log(station,"error was raised #{$!.message}", :red)
+    end
+
+    unless data.is_a?(Hash)
+      next log(station,"wrong return type #{data.class}", :magenta)
+    end
+
+    if data[:song].blank? and data[:artist].blank?
+      next log(station,"no song and artist found", :blue)
+    end
+
+    if data[:song].blank?
+      next log(station,"no song found", :white)
+    end
+
+    if data[:artist].blank?
+      next log(station,"no song artist", :white)
+    end
+
+    log(station,"OK", :green)
+    pp data if ENV["EXPAND"]
+  end
 end
