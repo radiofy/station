@@ -7,8 +7,7 @@ module Station
 
     def process
       artist, song = split(data.css("font").last.try(:text))
-      { :song => (song), :artist => (artist) }
-
+      { song: song, artist: artist }
     end
   end
 end

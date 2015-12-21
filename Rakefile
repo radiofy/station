@@ -191,5 +191,5 @@ def valid?(header)
 end
 
 def get(link)
-  Get.new
+  Get.new.get(link)
 end
