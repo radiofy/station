@@ -2,11 +2,12 @@ module Station
   class OneLive < Format::Raw
     config do
       id "1live"
-      url "http://www.einslive.de/radiotext/RADIOTXT.TXT"
+      url "http://www.wdr.de/radio/radiotext/streamtitle_1live.txt"
+      exclude ["1LIVE"]
     end
 
     def process
-      artist, song = data.split(" mit ", 2)
+      artist, song = split(data)
       { artist: artist, song: song }
     end
   end
