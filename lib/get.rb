@@ -1,4 +1,4 @@
-require "http"
+require "rest-client"
 require "timeout"
 require "charlock_holmes/string"
 
@@ -8,16 +8,21 @@ class Get
   end
 
   def get(url)
-    Timeout::timeout(2) do
-      @urls[url] ||= `curl --silent -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36' --compressed '#{url}'`
-      detection = CharlockHolmes::EncodingDetector.detect(@urls[url])
-      if detection[:encoding]
-        CharlockHolmes::Converter.convert @urls[url], detection[:encoding], 'UTF-8'
-      else
-        @urls[url]
-      end
+    @urls[url] ||= RestClient::Request.execute({
+      method: "get",
+      url: url,
+      headers: { user_agent: "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36" },
+      timeout: 3, 
+      open_timeout: 3
+    })
+
+    detection = CharlockHolmes::EncodingDetector.detect(@urls[url])
+    if detection[:encoding]
+      CharlockHolmes::Converter.convert @urls[url], detection[:encoding], 'UTF-8'
+    else
+      @urls[url]
     end
-  rescue Errno::ENOTCONN, Errno::ECONNRESET, Errno::ENOTCONN, IOError, SocketError, Timeout::Error
+  rescue RestClient::Exception
     return false
   end
 end

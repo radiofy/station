@@ -11,7 +11,6 @@ group :test do
   gem "vcr"
   gem "webmock"
   gem "byebug"
-  gem "http"
   gem "rest-client"
   gem "sourcify"
   gem "colorize"
