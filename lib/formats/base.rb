@@ -3,12 +3,6 @@ require "active_support/all"
 require "nokogiri"
 
 module Station
-  @@subclasses = []
-
-  def self.stations
-    @@subclasses
-  end
-
   module Format
     class Base
       def self.inherited(base)
