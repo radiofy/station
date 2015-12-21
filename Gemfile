@@ -1,14 +1,9 @@
-source 'https://rubygems.org'
-
-# Specify your gem's dependencies in stations.gemspec
+source "https://rubygems.org"
 gemspec
 
 gem "music_sanitizer"
 gem "nokogiri"
 gem "activesupport"
-gem "sourcify"
-gem "colorize"
-gem "ruby-beautify"
 
 group :test do
   gem "rspec"
@@ -18,4 +13,10 @@ group :test do
   gem "byebug"
   gem "http"
   gem "rest-client"
+  gem "sourcify"
+  gem "colorize"
+  gem "ruby-beautify"
+  gem "hirb"
+  gem "postrank-uri"
+  gem "progress_bar"
 end
