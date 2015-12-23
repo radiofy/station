@@ -1,11 +1,11 @@
 module Station
-  {
-    "bbc6music" => "6music",
-    "bbc1xtra" => "1xtra"
-  }.each_pair do |key, station|
+  [
+    "6music",
+    "1xtra"
+  ].each do |station|
     Class.new(Format::BBC) do
       config do
-        id key
+        id station
         url "http://polling.bbc.co.uk/modules/onairpanel/include/bbc_#{station}.jsonp"
       end
     end
