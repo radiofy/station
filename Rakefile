@@ -129,7 +129,7 @@ task :validate_url do
         result << ResultC.new(
           res[:song][:title], 
           res[:artist][:name], 
-          worker, 
+          station.config.id, 
           link,
           header
         )
