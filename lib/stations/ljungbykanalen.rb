@@ -6,8 +6,7 @@ module Station
     end
 
     def process
-      track = data.
-        at_css("body b").try(:text)
+      track = data.at_css("body b").try(:text)
       track && track.gsub!(/Nu spelar vi:/, "")
       artist, song = track && split(track)
       { artist: artist, song: song }
