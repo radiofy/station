@@ -2,14 +2,13 @@ module Station
   class Radiosor < Format::HTML
     config do
       id "radiosor"
-      url "http://www.radiosor.no/spillesnaaforside.php"
+      url "http://radiosor.no/rs/wp-content/themes/original/nettradionaaalbum.php"
     end
 
     def process
-      track = data.at_css("span").try(:text)
-      artist, song = (track and split(track))
-      { :song => (song), :artist => (artist) }
-
+      song = data.at_css(":nth-child(5)").try(:text)
+      artist = data.at_css(":nth-child(4)").try(:text)
+      { artist: artist, song: song }
     end
   end
 end
