@@ -68,6 +68,17 @@ module Station
         }
       end
 
+      def get(hash, keys)
+        split_keys = keys.split(".")
+        split_keys.each_with_index do |key, index|
+          unless hash = hash[key]
+            raise KeyError, "key not found: #{split_keys[0..index].join(".")}"
+          end
+        end
+
+        hash
+      end
+
       def self.config(&block)
         if block_given?
           @config = Config.new

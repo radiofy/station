@@ -11,7 +11,7 @@ group :test do
   gem "vcr"
   gem "webmock"
   gem "byebug"
-  gem "rest-client"
+  gem "rest-client", "~> 2.0.0.rc2"
   gem "sourcify"
   gem "colorize"
   gem "ruby-beautify"
