@@ -6,10 +6,7 @@ module Station
     end
 
     def process
-      {
-        song: data.fetch("titre"),
-        artist: data.fetch("artiste")
-      }
+      { song: data.fetch("titre"), artist: data.fetch("artiste") }
     end
   end
 end
