@@ -4,7 +4,7 @@ module Station
   module Format
     class HTML < Base
       def data
-        Nokogiri::HTML(super)
+        @_data ||= Nokogiri::HTML(super)
       end
     end
   end
