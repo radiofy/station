@@ -25,7 +25,7 @@ task :run do
       next # log(station,"disabled", :black)
     end
 
-    unless data = get.get(station.config.url)
+    unless data = get.get(station.config)
       next log(station,"no data found", :yellow)
     end
 

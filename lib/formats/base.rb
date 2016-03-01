@@ -1,6 +1,7 @@
 require "music_sanitizer"
 require "active_support/all"
 require "nokogiri"
+require "fast_blank"
 
 module Station
   module Format
@@ -146,6 +147,26 @@ module Station
 
       def args(value = nil)
         value ? @args = value : @args
+      end
+
+      def cookies(value = nil)
+        value ? @cookies = value : @cookies
+      end
+
+      def update_frequency(value = nil)
+        value ? @update_frequency = value : @update_frequency
+      end
+
+      def to_json
+        {
+          update_frequency: update_frequency,
+          cookies: cookies,
+          args: args,
+          disabled: disabled,
+          exclude: exclude,
+          url: url,
+          id: id
+        }
       end
     end
   end
