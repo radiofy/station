@@ -133,10 +133,6 @@ module Station
         value ? @id = value : @id
       end
 
-      def url(value = nil)
-        value ? @url = value : @url
-      end
-
       def exclude(value = nil)
         value ? @exclude = value : @exclude
       end
@@ -149,22 +145,20 @@ module Station
         value ? @args = value : @args
       end
 
-      def cookies(value = nil)
-        value ? @cookies = value : @cookies
+      def source(value = nil)
+        value ? @source = value : @source
       end
 
-      def update_frequency(value = nil)
-        value ? @update_frequency = value : @update_frequency
+      def url(value = nil)
+        value ? @source = { url: value } : @source
       end
 
       def to_json
         {
-          update_frequency: update_frequency,
-          cookies: cookies,
           args: args,
           disabled: disabled,
           exclude: exclude,
-          url: url,
+          source: source,
           id: id
         }
       end

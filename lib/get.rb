@@ -8,22 +8,23 @@ class Get
   end
 
   def get(config)
-    @urls[config.url] ||= RestClient::Request.execute({
+    url = config.source.fetch(:url)
+    @urls[url] ||= RestClient::Request.execute({
       method: "get",
-      url: config.url,
+      url: url,
       headers: {
         user_agent: "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
       },
-      cookies: config.cookies,
+      cookies: config.source[:cookies],
       timeout: 3, 
       open_timeout: 3
     })
 
-    detection = CharlockHolmes::EncodingDetector.detect(@urls[config.url])
+    detection = CharlockHolmes::EncodingDetector.detect(@urls[url])
     if detection[:encoding]
-      CharlockHolmes::Converter.convert @urls[config.url], detection[:encoding], 'UTF-8'
+      CharlockHolmes::Converter.convert @urls[url], detection[:encoding], 'UTF-8'
     else
-      @urls[config.url]
+      @urls[url]
     end
   rescue RestClient::Exception, SocketError
     return false

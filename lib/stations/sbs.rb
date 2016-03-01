@@ -24,10 +24,11 @@ module Station
     Class.new(Format::JSON) do
       config do
         id station.fetch(:station)
-        url "http://www.radioplay.se/api/core/page?url=/#{station.fetch(:id)}/latlista"
+        source ({
+          url: "http://www.radioplay.se/api/core/page?url=/#{station.fetch(:id)}/latlista",
+          cookies: { country: "se" }
+        })
         exclude ["Mer musik kommer snart", "Mastermix"]
-        cookies({ country: "se" })
-        update_frequency 60
       end
 
       def process
