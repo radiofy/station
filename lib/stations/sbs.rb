@@ -45,7 +45,7 @@ module Station
         modules.find do |mod|
           next false unless mod["content"].is_a?(Array)
           next false unless mod["content"].first.is_a?(Hash)
-          track = mod["content"].first
+          next false unless track = mod["content"].first
           not track["title"].blank? and not track["artist"].blank?
         end
       end
