@@ -1,5 +1,5 @@
 module Station
-  class Antenne < Format::JSON
+  class Radio102 < Format::JSON
     config do
       id "radio102"
       url "http://www.radio102.no/ajax.lastplayed.php"
