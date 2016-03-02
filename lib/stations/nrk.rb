@@ -65,11 +65,7 @@ module Station
   },{
     id: "nrk-p2",
     url: "http://lyd.nrk.no/nrk_radio_p2_mp3_m.xspf"
-  },{
-    id: "nrk-p3",
-    url: "http://lyd.nrk.no/nrk_radio_p3_mp3_m.xspf",
-    worker: "StationJob::NRKInvert"
-  },{
+  }, {
     id: "nrk-national-rap-show",
     url: "http://lyd.nrk.no/nrk_radio_p3_national_rap_show_mp3_m.xspf"
   },{

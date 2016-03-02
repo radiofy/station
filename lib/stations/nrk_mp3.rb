@@ -3,6 +3,7 @@ module Station
     config do
       id "nrk-mp3"
       url "http://lyd.nrk.no/nrk_radio_mp3_mp3_m.xspf"
+      exclude ["Neste Blir"]
     end
 
     def process
