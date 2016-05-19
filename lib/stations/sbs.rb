@@ -12,8 +12,8 @@ module Station
     station: "the-voice",
     id: "thevoice"
   }, {
-    station: "vinyl-107",
-    id: "vinyl107"
+    station: "vinylfm",
+    id: "vinylfm"
   }, {
     station: "the-voice-party-people",
     id: "the-voice-party-people"
