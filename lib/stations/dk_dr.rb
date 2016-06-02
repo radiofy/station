@@ -1,28 +1,40 @@
+#
+#
+#     <li class="track" data-trackId="2283978-1-3" data-artistimageurls="http://www.dr.dk/musik/kunstner/async/118928/GetArtistPictureJson"  itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
+#             <time datetime="00h 16m 47s">12:19</time>
+#
+#
+# <span class="accessibility-label">Patrulje med Kliche </span>
+#     <div class="trackInfo" aria-hidden="true" role="presentation">        <span class="track" itemprop="name">
+#                 <a href="http://www.dr.dk/musik/titel/Patrulje/2283978-1-3" >Patrulje</a>
+#         </span>
+#             <span class="name" itemprop="byArtist">Kliche</span>
+# </div>
+#     <a href="http://www.dr.dk/musik/titel/Patrulje/2283978-1-3" class="accessibility-label">Mere information om "Patrulje"</a>
+#
+#         <div class="trackDetails">
+#
+#
+#         </div>
+#     </li>
+#
+
 module Station
   [{
-    id: "P1D",
-    station: "dk-dr-p1"
-  }, {
-    id: "P2D",
-    station: "dk-dr-p2"
-  }, {
-    id: "P3",
-    station: "dk-dr-p3"
-  }, {
-    id: "KH4",
-    station: "dk-dr-p4"
+    id: "p6beat",
+    station: "p6beat"
   }].each do |station|
-    Class.new(Format::JSON) do
+    Class.new(Format::HTML) do
       config do
         id station.fetch(:station)
-        url "http://www.dr.dk/playlister/feeds/nowNext/nowPrev.drxml?items=1&cid=#{station.fetch(:id)}"
+        url "http://www.dr.dk/radio/playlist/tracklistupdate?episodePartId=812560872813&lastMusaId=2235946-1-4"
       end
 
       def process
-        track = data["now"]
-        if track && track["status"] == "music"
-          { song: track["track_title"], artist: track["display_artist"] }
-        end
+        {
+          song: data.at_css(".track a").text,
+          artist: data.at_css(".name").text
+        }
       end
     end
   end
