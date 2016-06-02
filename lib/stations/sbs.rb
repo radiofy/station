@@ -20,6 +20,9 @@ module Station
   }, {
     station: "nrj",
     id: "nrj"
+  }, {
+    station: "svensk-pop",
+    id: "svensk-pop"
   }].each do |station|
     Class.new(Format::JSON) do
       config do
