@@ -68,10 +68,7 @@ module Station
   }, {
     id: "nrk-national-rap-show",
     url: "http://lyd.nrk.no/nrk_radio_p3_national_rap_show_mp3_m.xspf"
-  },{
-    id: "nrk-pyro",
-    url: "http://lyd.nrk.no/nrk_radio_p3_pyro_mp3_m.xspf"
-  },{
+  }, {
     id: "nrk-radioresepsjonen",
     url: "http://lyd.nrk.no/nrk_radio_p3_radioresepsjonen_mp3_m.xspf"
   },{
