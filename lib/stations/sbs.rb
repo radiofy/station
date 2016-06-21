@@ -49,7 +49,7 @@ module Station
       end
 
       def to_selector(id)
-        ".context.dispatcher.stores.PageStore.pages./#{id}/latlista.data[1].modules[2].content[0]"
+        ".context.dispatcher.stores.PageStore.pages./#{id}/latlista.data[-1].modules[-1].content[0]"
       end
     end
   end
