@@ -24,33 +24,32 @@ module Station
     station: "svensk-pop",
     id: "svensk-pop"
   }].each do |station|
-    Class.new(Format::JSON) do
+    Class.new(Format::HTML) do
       config do
         id station.fetch(:station)
         source ({
-          url: "http://www.radioplay.se/api/core/page?url=/#{station.fetch(:id)}/latlista",
-          cookies: { country: "se" }
+          url: "http://www.radioplay.se/#{station.fetch(:id)}/latlista",
+          cookies: { country: "se" },
         })
         exclude ["Mer musik kommer snart", "Mastermix"]
+        args [station.fetch(:id)]
       end
 
-      def process
-        return unless page = data.fetch("pages").last
-        return unless tracks = find(page.fetch("modules"))
-        return unless track = tracks.fetch("content").first
-        {
-          song: track.fetch("title"),
-          artist: track.fetch("artist")
-        }
+      def process(id)
+        track = get(extract_hash(data), to_selector(id))
+        { song: track.fetch("title"), artist: track.fetch("artist") }
       end
 
-      def find(modules)
-        modules.find do |mod|
-          next false unless mod["content"].is_a?(Array)
-          next false unless mod["content"].first.is_a?(Hash)
-          next false unless track = mod["content"].first
-          not track["title"].blank? and not track["artist"].blank?
-        end
+      def extract_hash(data)
+        script = data.css("script").find do |script|
+          script.to_s.match(/latlista/)
+        end.text or raise "no script found"
+
+        JSON.parse(script.match(/({.+})/).to_a[1])
+      end
+
+      def to_selector(id)
+        ".context.dispatcher.stores.PageStore.pages./#{id}/latlista.data[1].modules[2].content[0]"
       end
     end
   end

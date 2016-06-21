@@ -6,8 +6,8 @@ module Station
     end
 
     def process
-      track = get(data, "ProgramInstance.Elements").last
-      { song: get(track, "TrackTitle"), artist: get(track, "Artist.Name") }
+      track = get(data, ".ProgramInstance.Elements[-1]")
+      { song: get(track, ".TrackTitle"), artist: get(track, ".Artist.Name") }
     end
   end
 end

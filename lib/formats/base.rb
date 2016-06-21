@@ -1,6 +1,7 @@
 require "music_sanitizer"
 require "active_support/all"
 require "nokogiri"
+require "berg"
 require "fast_blank"
 
 module Station
@@ -26,7 +27,7 @@ module Station
         return NO_MATCH if content.blank?
 
         unless content.is_a?(Hash)
-          fail InvalidDataFromSource, 
+          fail InvalidDataFromSource,
             "content must be of type hash, is #{content.class}"
         end
 
@@ -40,7 +41,7 @@ module Station
 
         if config.exclude.is_a?(Array)
           return NO_MATCH if config.exclude.any? do |el|
-            el.downcase.include?(song.downcase) or 
+            el.downcase.include?(song.downcase) or
               el.downcase.include?(artist.downcase)
           end
         end
@@ -69,15 +70,8 @@ module Station
         }
       end
 
-      def get(hash, keys)
-        split_keys = keys.split(".")
-        split_keys.each_with_index do |key, index|
-          unless hash = hash[key]
-            raise KeyError, "key not found: #{split_keys[0..index].join(".")}"
-          end
-        end
-
-        hash
+      def get(hash, query)
+        Berg::Value.locate(hash, query, true).value
       end
 
       def self.config(&block)

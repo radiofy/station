@@ -5,6 +5,7 @@ gem "music_sanitizer"
 gem "nokogiri"
 gem "activesupport"
 gem "fast_blank"
+gem "berg"
 
 group :test do
   gem "rspec"
