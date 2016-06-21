@@ -1,12 +1,6 @@
 source "https://rubygems.org"
 gemspec
 
-gem "music_sanitizer"
-gem "nokogiri"
-gem "activesupport"
-gem "fast_blank"
-gem "berg"
-
 group :test do
   gem "rspec"
   gem "charlock_holmes"
