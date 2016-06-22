@@ -65,7 +65,7 @@ class ExtractLink
   end
 
   def process
-    json["log"]["entries"].each_with_object([]) do |e, res| 
+    json["log"]["entries"].each_with_object([]) do |e, res|
       url = e["request"]["url"]
       res << url if valid_url?(url)
     end
@@ -79,10 +79,10 @@ class ExtractLink
 
   def valid_url?(url)
     [
-      "fbcdn", 
-      "fbstatic", 
-      "gstatic", 
-      "google", 
+      "fbcdn",
+      "fbstatic",
+      "gstatic",
+      "google",
       "facebook"
     ].all?{ |r| not url.match(r) }
   end
@@ -127,9 +127,9 @@ task :validate_url do
       res = station.new(data).perform rescue nil
       if valid_data?(res)
         result << ResultC.new(
-          res[:song][:title], 
-          res[:artist][:name], 
-          station.config.id, 
+          res[:song][:title],
+          res[:artist][:name],
+          station.config.id,
           link,
           header
         )
@@ -162,7 +162,7 @@ end
 
 def header(url)
   RestClient.head(url, {
-    timeout: 3, 
+    timeout: 3,
     open_timeout: 3
   }).headers[:content_type]
 rescue RestClient::Exception
@@ -173,7 +173,7 @@ def image?(header)
 end
 
 def valid_data?(data)
-  data and 
+  data and
     data[:song][:title].length < 30 and
       data[:artist][:name].length < 30
 end
