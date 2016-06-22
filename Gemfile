@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 gemspec
 
+gem "berg", path: "/Users/linus/Documents/Projekt/berg-rb"
+
 group :test do
   gem "rspec"
   gem "charlock_holmes"
