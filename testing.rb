@@ -224,7 +224,7 @@ module Locate
     end
 
     def compare_nodes(n1, n2)
-      n1.text.squeeze(" ").strip == n2.text.squeeze(" ").strip
+      n1.text.squeeze(" ").strip.downcase == n2.text.squeeze(" ").strip.downcase
     end
 
     def optimize_path((path, is_strict, rest), acumilator, end_node)
