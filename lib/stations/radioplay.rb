@@ -1,9 +1,9 @@
 def dk(station)
-  ["playlister", "http://www.radioplay.dk/#{station}/playlister", "dk", station]
+  [station, "http://www.radioplay.dk/#{station}", "dk", station]
 end
 
 def se(station)
-  ["latlista", "http://www.radioplay.se/#{station}/latlista", "se", station]
+  ["latlista", "http://www.radioplay.se/#{station}", "se", station]
 end
 
 module Station
@@ -35,7 +35,7 @@ module Station
     station: "radiosoft-dk",
     config: dk("radiosoft")
   }, {
-    station: "the-voice-dk",
+    station: "the-voic-dk",
     config: dk("thevoice")
   }, {
     station: "nova-dk",
@@ -67,14 +67,22 @@ module Station
           cookies: { country: country },
         })
         exclude ["Mer musik kommer snart", "Mastermix"]
-        args [playlist, name]
+        args [playlist, name, country]
       end
 
-      def process(playlist, id)
+      def process(playlist, id, country)
+        if country == "dk"
+          return nil
+        end
+
         unless track = select(get(extract_hash(data, playlist), to_selector(id, playlist)))
           return nil
         end
-        { song: track.fetch("title"), artist: track.fetch("artist") }
+
+        {
+          song: track.fetch("title"),
+          artist: track.fetch("artist")
+        }
       end
 
       def extract_hash(data, playlist)
@@ -85,16 +93,20 @@ module Station
         JSON.parse(script.match(/({.+})/).to_a[1])
       end
 
-      def select(modules)
-        result = modules.find do |mod|
-          not mod.fetch("content", []).empty?
+      def select(configs)
+        mod = get(configs, "[-1].modules").detect do |mod|
+          mod && mod["type"] == "track_history"
         end
 
-        result && get(result, ".content[0]", false)
+        unless mod
+          return nil
+        end
+
+        get(mod, ".content[0]")
       end
 
       def to_selector(id, playlist)
-        ".context.dispatcher.stores.PageStore.pages./#{id}/#{playlist}.data[-1].modules"
+        ".context.dispatcher.stores.PageStore.pages./#{id}.data"
       end
     end
   end

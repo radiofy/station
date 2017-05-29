@@ -1,4 +1,8 @@
-[{
+[	{
+		"name": "Rix FM",
+		"token": "rix-fm",
+		"id": "3"
+	},{
 		"name": "100% Taylor Swift",
 		"id": "25"
 	},
@@ -108,10 +112,5 @@
 		"name": "Star FM",
 		"token": "starfm",
 		"id": "94"
-	},
-	{
-		"name": "Rix FM",
-		"token": "rix-fm",
-		"id": "3"
 	}
 ]

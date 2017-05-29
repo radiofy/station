@@ -1,8 +1,8 @@
-require "pp"
+require "json"
 
 module Station
   data = File.read(File.join(File.dirname(__FILE__), "../lists/ilikeradio.json"))
-  JSON.parse(data).each do |station|
+  ::JSON.parse(data).each do |station|
     Class.new(Format::JSON) do
       config do
         if an_id = station["token"]
@@ -20,12 +20,12 @@ module Station
           return nil
         end
 
-        current = get(row, ".currentsong") || get(row, ".current_song")
+        current = get(row, ".currentsong") || get(row, ".current_song")
 
         unless current
           return nil
         end
-        
+
         return {
           song: get(current, ".song.title"),
           artist: get(current, ".song.artist_name")

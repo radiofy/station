@@ -25,10 +25,10 @@ module Station
       end
 
       def process(id)
-        return unless track = data.fetch(id)
-        return unless current = track.fetch("current_item")
+        return unless track = data[id]
+        return unless current = track["current_item"]
 
-        { 
+        {
           artist: current["artist"],
           song: current["song"]
         }
