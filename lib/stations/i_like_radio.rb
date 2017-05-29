@@ -5,7 +5,11 @@ module Station
   JSON.parse(data).each do |station|
     Class.new(Format::JSON) do
       config do
-        id station.fetch("token", station.fetch("name").parameterize)
+        if an_id = station["token"]
+          id an_id
+        else
+          id station.fetch("name").parameterize
+        end
         url "http://unison.mtgradio.se/api/v2/channel?with=currentsong3&platform=web"
         args [station.fetch("id")]
       end
