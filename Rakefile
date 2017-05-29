@@ -31,7 +31,7 @@ task :run do
 
     begin
       unless data = station.new(data).perform
-        next log(station,"could not parse", :red)
+        next log(station,"no result custom station", :red)
       end
     rescue
       next log(station,"error was raised #{$!.message}", :red)

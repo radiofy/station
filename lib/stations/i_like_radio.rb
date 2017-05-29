@@ -6,7 +6,7 @@ module Station
     Class.new(Format::JSON) do
       config do
         id station.fetch("name").parameterize
-        url "http://unison.mtgradio.se/api/v1/channel?with=currentsong&type[]=live&type[]=playlist"
+        url "http://unison.mtgradio.se/api/v2/channel?with=currentsong3&platform=web"
         args [station.fetch("id")]
       end
 

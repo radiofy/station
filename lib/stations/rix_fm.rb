@@ -2,7 +2,8 @@ module Station
   class RixFm < Format::MTG
     config do
       id "rix-fm"
-      url "http://streamcontrol.mtgradio.se/api/songs/current/3?callback=callback"
+      url "http://unison.mtgradio.se/api/v2/channel?with=currentsong3&platform=web"
+      args ["3"]
     end
   end
 end

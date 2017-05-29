@@ -1,12 +1,10 @@
 module Station
-  class Powerhitradio < Format::JSON
+  class PowerHitRadio < Format::MTG
     config do
       id "powerhitradio"
-      url "http://streamcontrol.mtgradio.se/api/songs/current/6"
-    end
-
-    def process
-      { :song => (data["title"]), :artist => (data["artist"]) }
+      url "http://unison.mtgradio.se/api/v2/channel?with=currentsong3&platform=web"
+      args ["6"]
     end
   end
 end
+
