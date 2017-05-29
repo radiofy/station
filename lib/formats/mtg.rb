@@ -1,4 +1,4 @@
-require_relative "./jsonp"
+require_relative "./json"
 
 module Station
   module Format
