@@ -2,7 +2,7 @@ require_relative "./jsonp"
 
 module Station
   module Format
-    class MTG < JSON
+    class MTG < Format::JSON
       def process(id)
         if id.nil?
           abort "No data passed to MTG.process()"
