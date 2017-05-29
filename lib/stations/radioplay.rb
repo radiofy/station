@@ -71,7 +71,9 @@ module Station
       end
 
       def process(playlist, id)
-        track = select(get(extract_hash(data, playlist), to_selector(id, playlist)))
+        unless track = select(get(extract_hash(data, playlist), to_selector(id, playlist)))
+          return nil
+        end
         { song: track.fetch("title"), artist: track.fetch("artist") }
       end
 

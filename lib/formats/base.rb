@@ -71,7 +71,7 @@ module Station
       end
 
       def get(hash, query, raise_error = true)
-        Berg::Value.locate(hash, query, raise_error).value
+        Berg::Value.locate(hash, query, false).value
       end
 
       def self.config(&block)
