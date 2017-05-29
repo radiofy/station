@@ -51,7 +51,9 @@ module Station
 
       def process
         doc = Nokogiri::HTML(data.gsub("<!--", "").gsub("-->", ""))
-        track = doc.at_css("a.dedsngbtn")
+        unless track = doc.at_css("a.dedsngbtn")
+          return nil
+        end
         artist, song = split(track.attr("data-sng"))
         { song: song, artist: artist }
       end

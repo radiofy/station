@@ -6,7 +6,10 @@ module Station
     end
 
     def process
-      track = data.at_css(".left > p").text.split("\n").map(&:strip)[-2]
+      unless content = data.at_css(".left > p")
+        return nil
+      end
+      track = content.text.split("\n").map(&:strip)[-2]
       artist, song = track.split(/\s*:\s*/, 2)
       { artist: artist, song: song }
     end

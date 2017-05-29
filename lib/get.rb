@@ -16,7 +16,7 @@ class Get
         user_agent: "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
       },
       cookies: config.source[:cookies],
-      timeout: 3, 
+      timeout: 3,
       open_timeout: 3
     })
 
@@ -27,6 +27,8 @@ class Get
       @urls[url]
     end
   rescue RestClient::Exception, SocketError
+    return false
+  rescue ArgumentError
     return false
   end
 end

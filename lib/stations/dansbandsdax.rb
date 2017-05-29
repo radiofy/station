@@ -6,7 +6,11 @@ module Station
     end
 
     def process
-      track = data.at_css("#Box").content
+      unless box = data.at_css("#Box")
+        return nil
+      end
+
+      track = box.content
       artist, song = (track and split(track.split("\n").last.strip))
       { :artist => (artist), :song => (song) }
 

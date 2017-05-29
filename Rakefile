@@ -34,7 +34,7 @@ task :run do
         next log(station,"no result custom station", :red)
       end
     rescue
-      next log(station,"error was raised #{$!.message}", :red)
+      next log(station,"error was raised #{$!.message}"[0...100].gsub("\n", "[nl]") + "...", :red)
     end
 
     unless data.is_a?(Hash)
