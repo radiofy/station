@@ -14,12 +14,16 @@ module Station
         args [station.fetch("id")]
       end
 
+
       def process(id)
-        raw   = data.select{ |ss| ss.fetch("id") == id }.first
-        track  = raw && raw.fetch("currentsong").fetch("song")
-        artist = track && track.fetch("artist_name")
-        song   = track && track.fetch("title")
-        { artist: artist, song: song }
+        unless row = data.detect{ |row| row.fetch("id") == id }
+          return nil
+        end
+
+        return {
+          song: get(row, ".currentsong.song.title"),
+          artist: get(row, ".currentsong.song.artist_name")
+        }
       end
     end
   end

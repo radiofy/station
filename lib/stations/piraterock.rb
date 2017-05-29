@@ -6,9 +6,9 @@ module Station
     end
 
     def process
-      artist, song = split(data)
-      { :artist => (artist), :song => (song) }
-
+      # artist, song = split(data)
+      # { :artist => (artist), :song => (song) }
+      return nil
     end
   end
 end
