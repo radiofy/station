@@ -20,9 +20,15 @@ module Station
           return nil
         end
 
+        current = get(row, ".currentsong") || get(row, ".current_song")
+
+        unless current
+          return nil
+        end
+        
         return {
-          song: get(row, ".currentsong.song.title"),
-          artist: get(row, ".currentsong.song.artist_name")
+          song: get(current, ".song.title"),
+          artist: get(current, ".song.artist_name")
         }
       end
     end
